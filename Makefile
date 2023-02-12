@@ -1,4 +1,4 @@
- Makefile for flutter operations
+# Makefile for flutter operations
 
 .PHONY: help freezed
 
