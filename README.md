@@ -1,16 +1,26 @@
-# app_profiles
+# App Profiles
 
-A new Flutter project.
+The productivity app for the mixed-use computer!
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+App Profiles lets you create named profiles that can:
 
-A few resources to get you started if this is your first Flutter project:
+- Open Google Chrome with any number of preset tabs
+- Open a VSCode project
+- Open GitHub Desktop
+- Open Slack to a specific workspace
+- Open a terminal window in a specific working directory
+- Open Spotify to a specific playlist
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+and more planned in the future:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Close all apps opened with a profile
+- Track time spent in each profile
+- Additional browser support
+- Apple Music support
+- Put application windows in preset MacOS desktop layouts
+- Custom scripting
+- Much more - please add an issue to this repository with any feature requests!
+
+That's all for now... enjoy!
