@@ -1,4 +1,4 @@
-import 'package:app_profiles/src/features/action/models/action.dart';
+import 'package:app_profiles/src/features/action/models/action/action.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
@@ -14,7 +14,7 @@ class Profile with _$Profile {
     required ProfileId id,
     required String name,
     required String description,
-    required List<ActionId> items,
+    required List<ActionId> actions,
     required bool isActive,
     /// TODO: image, timer
   }) = _Profile;

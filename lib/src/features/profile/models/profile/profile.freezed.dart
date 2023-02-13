@@ -23,7 +23,7 @@ mixin _$Profile {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  List<String> get items => throw _privateConstructorUsedError;
+  List<String> get actions => throw _privateConstructorUsedError;
   bool get isActive => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $ProfileCopyWith<$Res> {
       {String id,
       String name,
       String description,
-      List<String> items,
+      List<String> actions,
       bool isActive});
 }
 
@@ -60,7 +60,7 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? items = null,
+    Object? actions = null,
     Object? isActive = null,
   }) {
     return _then(_value.copyWith(
@@ -76,9 +76,9 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
+      actions: null == actions
+          ? _value.actions
+          : actions // ignore: cast_nullable_to_non_nullable
               as List<String>,
       isActive: null == isActive
           ? _value.isActive
@@ -99,7 +99,7 @@ abstract class _$$_ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
       {String id,
       String name,
       String description,
-      List<String> items,
+      List<String> actions,
       bool isActive});
 }
 
@@ -116,7 +116,7 @@ class __$$_ProfileCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? description = null,
-    Object? items = null,
+    Object? actions = null,
     Object? isActive = null,
   }) {
     return _then(_$_Profile(
@@ -132,9 +132,9 @@ class __$$_ProfileCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      items: null == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
+      actions: null == actions
+          ? _value._actions
+          : actions // ignore: cast_nullable_to_non_nullable
               as List<String>,
       isActive: null == isActive
           ? _value.isActive
@@ -151,9 +151,9 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
       {required this.id,
       required this.name,
       required this.description,
-      required final List<String> items,
+      required final List<String> actions,
       required this.isActive})
-      : _items = items;
+      : _actions = actions;
 
   factory _$_Profile.fromJson(Map<String, dynamic> json) =>
       _$$_ProfileFromJson(json);
@@ -164,12 +164,12 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
   final String name;
   @override
   final String description;
-  final List<String> _items;
+  final List<String> _actions;
   @override
-  List<String> get items {
-    if (_items is EqualUnmodifiableListView) return _items;
+  List<String> get actions {
+    if (_actions is EqualUnmodifiableListView) return _actions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableListView(_actions);
   }
 
   @override
@@ -177,7 +177,7 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Profile(id: $id, name: $name, description: $description, items: $items, isActive: $isActive)';
+    return 'Profile(id: $id, name: $name, description: $description, actions: $actions, isActive: $isActive)';
   }
 
   @override
@@ -188,7 +188,7 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('description', description))
-      ..add(DiagnosticsProperty('items', items))
+      ..add(DiagnosticsProperty('actions', actions))
       ..add(DiagnosticsProperty('isActive', isActive));
   }
 
@@ -201,7 +201,7 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality().equals(other._actions, _actions) &&
             (identical(other.isActive, isActive) ||
                 other.isActive == isActive));
   }
@@ -209,7 +209,7 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, description,
-      const DeepCollectionEquality().hash(_items), isActive);
+      const DeepCollectionEquality().hash(_actions), isActive);
 
   @JsonKey(ignore: true)
   @override
@@ -230,7 +230,7 @@ abstract class _Profile implements Profile {
       {required final String id,
       required final String name,
       required final String description,
-      required final List<String> items,
+      required final List<String> actions,
       required final bool isActive}) = _$_Profile;
 
   factory _Profile.fromJson(Map<String, dynamic> json) = _$_Profile.fromJson;
@@ -242,7 +242,7 @@ abstract class _Profile implements Profile {
   @override
   String get description;
   @override
-  List<String> get items;
+  List<String> get actions;
   @override
   bool get isActive;
   @override

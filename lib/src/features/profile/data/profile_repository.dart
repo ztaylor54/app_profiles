@@ -1,4 +1,5 @@
-import 'package:app_profiles/src/features/profile/models/profile.dart';
+import 'package:app_profiles/src/features/profile/models/profile/profile.dart';
+import 'package:app_profiles/src/features/profile/models/profile_error/profile_error.dart';
 import 'package:app_profiles/src/util/in_memory_store.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -7,13 +8,19 @@ class ProfileRepository {
   final _profiles = InMemoryStore<Map<ProfileId, Profile>>({});
 
   /// Get a [Profile] by id.
-  Future<Profile> getProfile(ProfileId profileId) => throw UnimplementedError();
+  Future<Profile> getProfile(ProfileId profileId) async {
+    try {
+      return _profiles.value[profileId]!;
+    } catch (e) {
+      throw const ProfileError.noProfileWithGivenId();
+    }
+  }
 
   /// Save a [Profile].
-  Future<void> saveProfile(Profile profile) => throw UnimplementedError();
+  Future<void> saveProfile(Profile profile) async => _profiles.value[profile.id] = profile;
 
   /// Delete a [Profile].
-  Future<void> deleteProfile(ProfileId profileId) => throw UnimplementedError();
+  Future<void> deleteProfile(ProfileId profileId) async => _profiles.value.remove(profileId);
 }
 
 /// [ProfileRepository] provider.

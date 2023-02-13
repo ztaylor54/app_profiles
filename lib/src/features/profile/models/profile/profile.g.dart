@@ -10,7 +10,8 @@ _$_Profile _$$_ProfileFromJson(Map<String, dynamic> json) => _$_Profile(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String,
-      items: (json['items'] as List<dynamic>).map((e) => e as String).toList(),
+      actions:
+          (json['actions'] as List<dynamic>).map((e) => e as String).toList(),
       isActive: json['isActive'] as bool,
     );
 
@@ -19,6 +20,6 @@ Map<String, dynamic> _$$_ProfileToJson(_$_Profile instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
-      'items': instance.items,
+      'actions': instance.actions,
       'isActive': instance.isActive,
     };
