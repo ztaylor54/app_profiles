@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:app_profiles/src/features/action/application/action_service.dart';
 import 'package:app_profiles/src/features/action/models/action/action.dart';
 import 'package:app_profiles/src/features/profile/data/profile_repository.dart';
@@ -19,6 +21,9 @@ class ProfileService {
   Future<Profile> getProfile(ProfileId profileId) async =>
       profileRepository.getProfile(profileId);
 
+  /// Get all [Profiles].
+  Future<List<Profile>> getProfiles() async => profileRepository.getProfiles();
+
   /// Save a [Profile].
   Future<void> saveProfile(Profile profile) async =>
       profileRepository.saveProfile(profile);
@@ -37,7 +42,9 @@ class ProfileService {
   Future<void> saveAction(ProfileId profileId, Action action) async {
     await actionService.saveAction(action);
     final profile = await profileRepository.getProfile(profileId);
-    final actions = profile.actions..add(action.id);
+    final List<String> actions = List.from(profile.actions)..add(action.id);
+    // log("adding action: ${actions}");
+    // log("${profile.copyWith(actions: actions)}");
     return profileRepository.saveProfile(profile.copyWith(actions: actions));
   }
 

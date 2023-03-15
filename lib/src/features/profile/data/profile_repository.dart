@@ -16,11 +16,21 @@ class ProfileRepository {
     }
   }
 
+  /// Get the list of [Profile].
+  Future<List<Profile>> getProfiles() async {
+    return _profiles.value.values.toList();
+  }
+
   /// Save a [Profile].
-  Future<void> saveProfile(Profile profile) async => _profiles.value[profile.id] = profile;
+  Future<void> saveProfile(Profile profile) async => _profiles.value.update(
+        profile.id,
+        (_) => profile,
+        ifAbsent: () => profile,
+      );
 
   /// Delete a [Profile].
-  Future<void> deleteProfile(ProfileId profileId) async => _profiles.value.remove(profileId);
+  Future<void> deleteProfile(ProfileId profileId) async =>
+      _profiles.value.remove(profileId);
 }
 
 /// [ProfileRepository] provider.
