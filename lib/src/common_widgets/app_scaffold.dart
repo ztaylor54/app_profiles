@@ -31,12 +31,13 @@ class _ScaffoldWithDrawerNavState extends State<ScaffoldWithDrawerNav> {
   /// Callback used to navigate to the desired tab.
   void _onDrawerItemTapped(BuildContext context, int tabIndex) {
     // make sure we're navigating to a new page
-    if (!GoRouter.of(context)
-        .location
-        .startsWith(drawerTabs[tabIndex].appPage.path)) {
+    if (!GoRouterState.of(context).matchedLocation.startsWith(
+          GoRouter.of(context).namedLocation(
+            drawerTabs[tabIndex].appPage.name,
+          ),
+        )) {
       // go to the initial location of the selected tab (by index)
-      context.pop();
-      context.push(drawerTabs[tabIndex].appPage.path);
+      context.goNamed(drawerTabs[tabIndex].appPage.name);
     } else {
       // close the drawer but don't navigate
       context.pop();
@@ -81,7 +82,6 @@ class ScaffoldWithNavBarTabItem extends BottomNavigationBarItem {
 
 class _DrawerItem extends StatelessWidget {
   const _DrawerItem({
-    super.key,
     required this.title,
     required this.color,
     required this.icon,
@@ -113,10 +113,9 @@ class _DrawerItem extends StatelessWidget {
 /// The drawer.
 class _Drawer extends ConsumerWidget {
   const _Drawer({
-    Key? key,
     required this.items,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   final List<ScaffoldWithNavBarTabItem> items;
   final void Function(int index) onTap;
@@ -128,7 +127,7 @@ class _Drawer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // final state = ref.watch(appScaffoldControllerProvider);
-    final _tabs = List<Widget>.generate(
+    final tabs = List<Widget>.generate(
         items.length,
         (index) => _DrawerItem(
               title: items[index].label ?? "",
@@ -142,7 +141,7 @@ class _Drawer extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _tabs[0],
+            tabs[0],
             const SizedBox(
               height: 12,
             ),

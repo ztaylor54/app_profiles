@@ -14,28 +14,28 @@ class AppRouter {
     // private navigators
     final rootNavigatorKey = GlobalKey<NavigatorState>();
     return GoRouter(
-      initialLocation: AppPage.root.path,
+      initialLocation: '/',
       navigatorKey: rootNavigatorKey,
       routes: [
         /// Root page - redirects to profile list.
         GoRoute(
-          path: AppPage.root.path,
+          path: '/',
           name: AppPage.root.name,
-          redirect: (_, __) => AppPage.profileList.path,
+          redirect: (_, __) => '/profiles',
         ),
 
         /// Profile list (main dashboard).
         GoRoute(
-          path: AppPage.profileList.path,
+          path: '/profiles',
           name: AppPage.profileList.name,
           builder: (context, state) => const ProfileListPage(),
           routes: [
             /// Profile detail page.
             GoRoute(
-              path: AppPage.profileDetail.path,
+              path: ':profileId',
               name: AppPage.profileDetail.name,
               builder: (context, state) => ProfileDetailPage(
-                profileId: state.params['profileId']!,
+                profileId: state.pathParameters['profileId']!,
               ),
             ),
           ],

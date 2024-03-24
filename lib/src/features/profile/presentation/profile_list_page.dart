@@ -70,7 +70,9 @@ class ProfileListPage extends ConsumerWidget {
                             imageURL: "test",
                             onSeeDetails: () => context.pushNamed(
                               AppPage.profileDetail.name,
-                              params: {'profileId': profileList[index].id},
+                              pathParameters: {
+                                'profileId': profileList[index].id,
+                              },
                             ),
                           );
                         }),
