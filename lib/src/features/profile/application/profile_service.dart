@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:app_profiles/src/features/action/application/action_service.dart';
 import 'package:app_profiles/src/features/action/models/action/action.dart';
 import 'package:app_profiles/src/features/profile/data/profile_repository.dart';

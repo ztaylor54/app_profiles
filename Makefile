@@ -10,4 +10,4 @@ help: ## This help message
 .DEFAULT_GOAL := help
 
 freezed: ## Run the freezed code generator
-	flutter pub run build_runner build --delete-conflicting-outputs
+	dart run build_runner build --delete-conflicting-outputs

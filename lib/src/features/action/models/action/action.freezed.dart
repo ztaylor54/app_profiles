@@ -12,7 +12,7 @@ part of 'action.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Action _$ActionFromJson(Map<String, dynamic> json) {
   return _Action.fromJson(json);
@@ -78,19 +78,21 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
 }
 
 /// @nodoc
-abstract class _$$_ActionCopyWith<$Res> implements $ActionCopyWith<$Res> {
-  factory _$$_ActionCopyWith(_$_Action value, $Res Function(_$_Action) then) =
-      __$$_ActionCopyWithImpl<$Res>;
+abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
+  factory _$$ActionImplCopyWith(
+          _$ActionImpl value, $Res Function(_$ActionImpl) then) =
+      __$$ActionImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, String description, String command});
 }
 
 /// @nodoc
-class __$$_ActionCopyWithImpl<$Res>
-    extends _$ActionCopyWithImpl<$Res, _$_Action>
-    implements _$$_ActionCopyWith<$Res> {
-  __$$_ActionCopyWithImpl(_$_Action _value, $Res Function(_$_Action) _then)
+class __$$ActionImplCopyWithImpl<$Res>
+    extends _$ActionCopyWithImpl<$Res, _$ActionImpl>
+    implements _$$ActionImplCopyWith<$Res> {
+  __$$ActionImplCopyWithImpl(
+      _$ActionImpl _value, $Res Function(_$ActionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -101,7 +103,7 @@ class __$$_ActionCopyWithImpl<$Res>
     Object? description = null,
     Object? command = null,
   }) {
-    return _then(_$_Action(
+    return _then(_$ActionImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -124,15 +126,15 @@ class __$$_ActionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Action with DiagnosticableTreeMixin implements _Action {
-  const _$_Action(
+class _$ActionImpl with DiagnosticableTreeMixin implements _Action {
+  const _$ActionImpl(
       {required this.id,
       required this.name,
       required this.description,
       required this.command});
 
-  factory _$_Action.fromJson(Map<String, dynamic> json) =>
-      _$$_ActionFromJson(json);
+  factory _$ActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionImplFromJson(json);
 
   @override
   final String id;
@@ -160,10 +162,10 @@ class _$_Action with DiagnosticableTreeMixin implements _Action {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Action &&
+            other is _$ActionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
@@ -178,12 +180,12 @@ class _$_Action with DiagnosticableTreeMixin implements _Action {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ActionCopyWith<_$_Action> get copyWith =>
-      __$$_ActionCopyWithImpl<_$_Action>(this, _$identity);
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
+      __$$ActionImplCopyWithImpl<_$ActionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ActionToJson(
+    return _$$ActionImplToJson(
       this,
     );
   }
@@ -194,9 +196,9 @@ abstract class _Action implements Action {
       {required final String id,
       required final String name,
       required final String description,
-      required final String command}) = _$_Action;
+      required final String command}) = _$ActionImpl;
 
-  factory _Action.fromJson(Map<String, dynamic> json) = _$_Action.fromJson;
+  factory _Action.fromJson(Map<String, dynamic> json) = _$ActionImpl.fromJson;
 
   @override
   String get id;
@@ -208,6 +210,6 @@ abstract class _Action implements Action {
   String get command;
   @override
   @JsonKey(ignore: true)
-  _$$_ActionCopyWith<_$_Action> get copyWith =>
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

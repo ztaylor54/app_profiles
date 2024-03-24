@@ -12,7 +12,7 @@ part of 'profile_error.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProfileError {
@@ -81,30 +81,31 @@ class _$ProfileErrorCopyWithImpl<$Res, $Val extends ProfileError>
 }
 
 /// @nodoc
-abstract class _$$_NoProfileWithGivenIdCopyWith<$Res> {
-  factory _$$_NoProfileWithGivenIdCopyWith(_$_NoProfileWithGivenId value,
-          $Res Function(_$_NoProfileWithGivenId) then) =
-      __$$_NoProfileWithGivenIdCopyWithImpl<$Res>;
+abstract class _$$NoProfileWithGivenIdImplCopyWith<$Res> {
+  factory _$$NoProfileWithGivenIdImplCopyWith(_$NoProfileWithGivenIdImpl value,
+          $Res Function(_$NoProfileWithGivenIdImpl) then) =
+      __$$NoProfileWithGivenIdImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NoProfileWithGivenIdCopyWithImpl<$Res>
-    extends _$ProfileErrorCopyWithImpl<$Res, _$_NoProfileWithGivenId>
-    implements _$$_NoProfileWithGivenIdCopyWith<$Res> {
-  __$$_NoProfileWithGivenIdCopyWithImpl(_$_NoProfileWithGivenId _value,
-      $Res Function(_$_NoProfileWithGivenId) _then)
+class __$$NoProfileWithGivenIdImplCopyWithImpl<$Res>
+    extends _$ProfileErrorCopyWithImpl<$Res, _$NoProfileWithGivenIdImpl>
+    implements _$$NoProfileWithGivenIdImplCopyWith<$Res> {
+  __$$NoProfileWithGivenIdImplCopyWithImpl(_$NoProfileWithGivenIdImpl _value,
+      $Res Function(_$NoProfileWithGivenIdImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NoProfileWithGivenId extends _NoProfileWithGivenId {
-  const _$_NoProfileWithGivenId() : super._();
+class _$NoProfileWithGivenIdImpl extends _NoProfileWithGivenId {
+  const _$NoProfileWithGivenIdImpl() : super._();
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NoProfileWithGivenId);
+        (other.runtimeType == runtimeType &&
+            other is _$NoProfileWithGivenIdImpl);
   }
 
   @override
@@ -180,35 +181,35 @@ class _$_NoProfileWithGivenId extends _NoProfileWithGivenId {
 }
 
 abstract class _NoProfileWithGivenId extends ProfileError {
-  const factory _NoProfileWithGivenId() = _$_NoProfileWithGivenId;
+  const factory _NoProfileWithGivenId() = _$NoProfileWithGivenIdImpl;
   const _NoProfileWithGivenId._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_InvalidActionIdCopyWith<$Res> {
-  factory _$$_InvalidActionIdCopyWith(
-          _$_InvalidActionId value, $Res Function(_$_InvalidActionId) then) =
-      __$$_InvalidActionIdCopyWithImpl<$Res>;
+abstract class _$$InvalidActionIdImplCopyWith<$Res> {
+  factory _$$InvalidActionIdImplCopyWith(_$InvalidActionIdImpl value,
+          $Res Function(_$InvalidActionIdImpl) then) =
+      __$$InvalidActionIdImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InvalidActionIdCopyWithImpl<$Res>
-    extends _$ProfileErrorCopyWithImpl<$Res, _$_InvalidActionId>
-    implements _$$_InvalidActionIdCopyWith<$Res> {
-  __$$_InvalidActionIdCopyWithImpl(
-      _$_InvalidActionId _value, $Res Function(_$_InvalidActionId) _then)
+class __$$InvalidActionIdImplCopyWithImpl<$Res>
+    extends _$ProfileErrorCopyWithImpl<$Res, _$InvalidActionIdImpl>
+    implements _$$InvalidActionIdImplCopyWith<$Res> {
+  __$$InvalidActionIdImplCopyWithImpl(
+      _$InvalidActionIdImpl _value, $Res Function(_$InvalidActionIdImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_InvalidActionId extends _InvalidActionId {
-  const _$_InvalidActionId() : super._();
+class _$InvalidActionIdImpl extends _InvalidActionId {
+  const _$InvalidActionIdImpl() : super._();
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InvalidActionId);
+        (other.runtimeType == runtimeType && other is _$InvalidActionIdImpl);
   }
 
   @override
@@ -284,34 +285,35 @@ class _$_InvalidActionId extends _InvalidActionId {
 }
 
 abstract class _InvalidActionId extends ProfileError {
-  const factory _InvalidActionId() = _$_InvalidActionId;
+  const factory _InvalidActionId() = _$InvalidActionIdImpl;
   const _InvalidActionId._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_UnknownCopyWith<$Res> {
-  factory _$$_UnknownCopyWith(
-          _$_Unknown value, $Res Function(_$_Unknown) then) =
-      __$$_UnknownCopyWithImpl<$Res>;
+abstract class _$$UnknownImplCopyWith<$Res> {
+  factory _$$UnknownImplCopyWith(
+          _$UnknownImpl value, $Res Function(_$UnknownImpl) then) =
+      __$$UnknownImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnknownCopyWithImpl<$Res>
-    extends _$ProfileErrorCopyWithImpl<$Res, _$_Unknown>
-    implements _$$_UnknownCopyWith<$Res> {
-  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+class __$$UnknownImplCopyWithImpl<$Res>
+    extends _$ProfileErrorCopyWithImpl<$Res, _$UnknownImpl>
+    implements _$$UnknownImplCopyWith<$Res> {
+  __$$UnknownImplCopyWithImpl(
+      _$UnknownImpl _value, $Res Function(_$UnknownImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Unknown extends _Unknown {
-  const _$_Unknown() : super._();
+class _$UnknownImpl extends _Unknown {
+  const _$UnknownImpl() : super._();
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unknown);
+        (other.runtimeType == runtimeType && other is _$UnknownImpl);
   }
 
   @override
@@ -387,6 +389,6 @@ class _$_Unknown extends _Unknown {
 }
 
 abstract class _Unknown extends ProfileError {
-  const factory _Unknown() = _$_Unknown;
+  const factory _Unknown() = _$UnknownImpl;
   const _Unknown._() : super._();
 }

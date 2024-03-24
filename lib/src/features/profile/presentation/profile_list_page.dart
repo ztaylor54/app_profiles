@@ -1,7 +1,10 @@
+import 'package:app_profiles/src/common_widgets/app_scaffold.dart';
 import 'package:app_profiles/src/features/profile/presentation/profile_card.dart';
 import 'package:app_profiles/src/features/profile/presentation/profile_list_page_controller.dart';
+import 'package:app_profiles/src/routing/app_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfileListPage extends ConsumerWidget {
   const ProfileListPage({
@@ -12,8 +15,8 @@ class ProfileListPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(profileListPageControllerProvider);
 
-    return Scaffold(
-      body: Padding(
+    return ScaffoldWithDrawerNav(
+      child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
         child: Row(
           children: [
@@ -52,6 +55,8 @@ class ProfileListPage extends ConsumerWidget {
                       return GridView.builder(
                         shrinkWrap: true,
                         itemCount: profileList.length,
+                        scrollDirection: Axis.vertical,
+                        physics: const ScrollPhysics(),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
@@ -59,10 +64,15 @@ class ProfileListPage extends ConsumerWidget {
                         ),
                         itemBuilder: ((context, index) {
                           return ProfileCard(
-                              title: profileList[index].name,
-                              subtitle: profileList[index].description,
-                              numActions: profileList[index].actions.length,
-                              imageURL: "test");
+                            title: profileList[index].name,
+                            subtitle: profileList[index].description,
+                            numActions: profileList[index].actions.length,
+                            imageURL: "test",
+                            onSeeDetails: () => context.pushNamed(
+                              AppPage.profileDetail.name,
+                              params: {'profileId': profileList[index].id},
+                            ),
+                          );
                         }),
                       );
                     },

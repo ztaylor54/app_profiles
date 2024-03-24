@@ -5,6 +5,8 @@ class ProfileCard extends StatelessWidget {
   final String subtitle;
   final String imageURL;
   final int numActions;
+  final VoidCallback? onSeeDetails;
+  final VoidCallback? onQuickLaunch;
 
   const ProfileCard({
     super.key,
@@ -12,6 +14,8 @@ class ProfileCard extends StatelessWidget {
     required this.subtitle,
     required this.imageURL,
     required this.numActions,
+    this.onSeeDetails,
+    this.onQuickLaunch,
   });
 
   @override
@@ -69,12 +73,14 @@ class ProfileCard extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   // Handle "See Details" button press
+                  onSeeDetails?.call();
                 },
                 child: const Text("See Details"),
               ),
               ElevatedButton(
                 onPressed: () {
                   // Handle "Quick Launch" button press
+                  onQuickLaunch?.call();
                 },
                 child: const Text("Quick Launch"),
               ),

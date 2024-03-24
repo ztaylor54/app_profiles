@@ -12,7 +12,7 @@ part of 'action_error.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ActionError {
@@ -75,30 +75,31 @@ class _$ActionErrorCopyWithImpl<$Res, $Val extends ActionError>
 }
 
 /// @nodoc
-abstract class _$$_NoActionWithGivenIdCopyWith<$Res> {
-  factory _$$_NoActionWithGivenIdCopyWith(_$_NoActionWithGivenId value,
-          $Res Function(_$_NoActionWithGivenId) then) =
-      __$$_NoActionWithGivenIdCopyWithImpl<$Res>;
+abstract class _$$NoActionWithGivenIdImplCopyWith<$Res> {
+  factory _$$NoActionWithGivenIdImplCopyWith(_$NoActionWithGivenIdImpl value,
+          $Res Function(_$NoActionWithGivenIdImpl) then) =
+      __$$NoActionWithGivenIdImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NoActionWithGivenIdCopyWithImpl<$Res>
-    extends _$ActionErrorCopyWithImpl<$Res, _$_NoActionWithGivenId>
-    implements _$$_NoActionWithGivenIdCopyWith<$Res> {
-  __$$_NoActionWithGivenIdCopyWithImpl(_$_NoActionWithGivenId _value,
-      $Res Function(_$_NoActionWithGivenId) _then)
+class __$$NoActionWithGivenIdImplCopyWithImpl<$Res>
+    extends _$ActionErrorCopyWithImpl<$Res, _$NoActionWithGivenIdImpl>
+    implements _$$NoActionWithGivenIdImplCopyWith<$Res> {
+  __$$NoActionWithGivenIdImplCopyWithImpl(_$NoActionWithGivenIdImpl _value,
+      $Res Function(_$NoActionWithGivenIdImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NoActionWithGivenId extends _NoActionWithGivenId {
-  const _$_NoActionWithGivenId() : super._();
+class _$NoActionWithGivenIdImpl extends _NoActionWithGivenId {
+  const _$NoActionWithGivenIdImpl() : super._();
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NoActionWithGivenId);
+        (other.runtimeType == runtimeType &&
+            other is _$NoActionWithGivenIdImpl);
   }
 
   @override
@@ -168,34 +169,35 @@ class _$_NoActionWithGivenId extends _NoActionWithGivenId {
 }
 
 abstract class _NoActionWithGivenId extends ActionError {
-  const factory _NoActionWithGivenId() = _$_NoActionWithGivenId;
+  const factory _NoActionWithGivenId() = _$NoActionWithGivenIdImpl;
   const _NoActionWithGivenId._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_UnknownCopyWith<$Res> {
-  factory _$$_UnknownCopyWith(
-          _$_Unknown value, $Res Function(_$_Unknown) then) =
-      __$$_UnknownCopyWithImpl<$Res>;
+abstract class _$$UnknownImplCopyWith<$Res> {
+  factory _$$UnknownImplCopyWith(
+          _$UnknownImpl value, $Res Function(_$UnknownImpl) then) =
+      __$$UnknownImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UnknownCopyWithImpl<$Res>
-    extends _$ActionErrorCopyWithImpl<$Res, _$_Unknown>
-    implements _$$_UnknownCopyWith<$Res> {
-  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+class __$$UnknownImplCopyWithImpl<$Res>
+    extends _$ActionErrorCopyWithImpl<$Res, _$UnknownImpl>
+    implements _$$UnknownImplCopyWith<$Res> {
+  __$$UnknownImplCopyWithImpl(
+      _$UnknownImpl _value, $Res Function(_$UnknownImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Unknown extends _Unknown {
-  const _$_Unknown() : super._();
+class _$UnknownImpl extends _Unknown {
+  const _$UnknownImpl() : super._();
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Unknown);
+        (other.runtimeType == runtimeType && other is _$UnknownImpl);
   }
 
   @override
@@ -265,6 +267,6 @@ class _$_Unknown extends _Unknown {
 }
 
 abstract class _Unknown extends ActionError {
-  const factory _Unknown() = _$_Unknown;
+  const factory _Unknown() = _$UnknownImpl;
   const _Unknown._() : super._();
 }
