@@ -1,7 +1,9 @@
 import 'package:app_profiles/src/features/profile/models/profile/profile.dart';
 import 'package:app_profiles/src/features/profile/models/profile_error/profile_error.dart';
 import 'package:app_profiles/src/util/in_memory_store.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'profile_repository.g.dart';
 
 /// Profile repository.
 class ProfileRepository {
@@ -34,6 +36,7 @@ class ProfileRepository {
 }
 
 /// [ProfileRepository] provider.
-final profileRepositoryProvider = Provider<ProfileRepository>((ref) {
+@riverpod
+ProfileRepository profileRepository(ProfileRepositoryRef ref) {
   return ProfileRepository();
-});
+}

@@ -3,7 +3,9 @@ import 'package:app_profiles/src/features/action/models/action/action.dart';
 import 'package:app_profiles/src/features/profile/data/profile_repository.dart';
 import 'package:app_profiles/src/features/profile/models/profile/profile.dart';
 import 'package:app_profiles/src/features/profile/models/profile_error/profile_error.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'profile_service.g.dart';
 
 /// The profile service.
 class ProfileService {
@@ -64,9 +66,11 @@ class ProfileService {
   }
 }
 
-final profileServiceProvider = Provider<ProfileService>((ref) {
+/// [ProfileService] provider.
+@riverpod
+ProfileService profileService(ProfileServiceRef ref) {
   return ProfileService(
     profileRepository: ref.watch(profileRepositoryProvider),
     actionService: ref.watch(actionServiceProvider),
   );
-});
+}

@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'profile_service.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$profileServiceHash() => r'3cc829719e3e4dbda232987be54ffc249d675256';
+
+/// [ProfileService] provider.
+///
+/// Copied from [profileService].
+@ProviderFor(profileService)
+final profileServiceProvider = AutoDisposeProvider<ProfileService>.internal(
+  profileService,
+  name: r'profileServiceProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$profileServiceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef ProfileServiceRef = AutoDisposeProviderRef<ProfileService>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

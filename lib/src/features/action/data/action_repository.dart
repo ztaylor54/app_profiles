@@ -1,7 +1,9 @@
 import 'package:app_profiles/src/features/action/models/action/action.dart';
 import 'package:app_profiles/src/features/action/models/action_error.dart';
 import 'package:app_profiles/src/util/in_memory_store.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'action_repository.g.dart';
 
 /// Action repository.
 class ActionRepository {
@@ -21,10 +23,12 @@ class ActionRepository {
       _actions.value[action.id] = action;
 
   /// Delete an [Action] by ID.
-  Future<void> deleteAction(ActionId actionId) async => _actions.value.remove(actionId);
+  Future<void> deleteAction(ActionId actionId) async =>
+      _actions.value.remove(actionId);
 }
 
 /// [ActionRepository] provider.
-final actionRepositoryProvider = Provider<ActionRepository>((ref) {
+@riverpod
+ActionRepository actionRepository(ActionRepositoryRef ref) {
   return ActionRepository();
-});
+}

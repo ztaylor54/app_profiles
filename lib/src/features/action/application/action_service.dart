@@ -1,7 +1,9 @@
 import 'package:app_profiles/src/features/action/data/action_repository.dart';
 import 'package:app_profiles/src/features/action/models/action/action.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:process_run/shell.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'action_service.g.dart';
 
 /// The action service.
 class ActionService {
@@ -31,8 +33,10 @@ class ActionService {
           );
 }
 
-final actionServiceProvider = Provider<ActionService>((ref) {
+/// [ActionService] provider.
+@riverpod
+ActionService actionService(ActionServiceRef ref) {
   return ActionService(
     actionRepository: ref.watch(actionRepositoryProvider),
   );
-});
+}
