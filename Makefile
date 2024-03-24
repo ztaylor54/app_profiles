@@ -9,5 +9,8 @@ help: ## This help message
 
 .DEFAULT_GOAL := help
 
-freezed: ## Run the freezed code generator
+codegen: ## Run the code generation for the project
 	dart run build_runner build --delete-conflicting-outputs
+
+codegen_watch: ## Run the code generation for the project in watch mode
+	dart run build_runner watch --delete-conflicting-outputs
